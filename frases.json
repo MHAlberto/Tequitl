@@ -1,0 +1,259 @@
+{
+  "frases": [
+    {
+      "autor": "Sócrates",
+      "frase": "La vida sin examen no merece ser vivida.",
+      "fuente": "Platón, 'Apología de Sócrates'[reference:0]"
+    },
+    {
+      "autor": "Sócrates",
+      "frase": "Solo sé que no sé nada.",
+      "fuente": "Diálogos platónicos[reference:1]"
+    },
+    {
+      "autor": "Sócrates",
+      "frase": "No puedo enseñar nada a nadie. Solo puedo hacerles pensar.",
+      "fuente": "Tradición filosófica[reference:2]"
+    },
+    {
+      "autor": "Platón",
+      "frase": "Intenta mover el mundo: el primer paso será moverte a ti mismo.",
+      "fuente": "Tradición filosófica[reference:3]"
+    },
+    {
+      "autor": "Aristóteles",
+      "frase": "Conocerse a uno mismo es el principio de toda sabiduría.",
+      "fuente": "Compendios clásicos[reference:4]"
+    },
+    {
+      "autor": "Aristóteles",
+      "frase": "La excelencia no es un acto, sino un hábito.",
+      "fuente": "Tradición filosófica[reference:5]"
+    },
+    {
+      "autor": "Confucio",
+      "frase": "No importa lo lento que vayas, siempre que no te detengas.",
+      "fuente": "'Analectas'[reference:6]"
+    },
+    {
+      "autor": "Lao Tse",
+      "frase": "Un viaje de mil millas comienza con un solo paso.",
+      "fuente": "'Tao Te Ching'[reference:7]"
+    },
+    {
+      "autor": "Epicuro",
+      "frase": "El que menos necesita del mañana es el que avanza con más gusto hacia él.",
+      "fuente": "Tradición filosófica[reference:8]"
+    },
+    {
+      "autor": "Marco Aurelio",
+      "frase": "La felicidad de tu vida depende de la calidad de tus pensamientos.",
+      "fuente": "'Meditaciones'[reference:9]"
+    },
+    {
+      "autor": "René Descartes",
+      "frase": "Pienso, luego existo.",
+      "fuente": "'Discurso del método'[reference:10][reference:11]"
+    },
+    {
+      "autor": "Blaise Pascal",
+      "frase": "El corazón tiene razones que la razón ignora.",
+      "fuente": "'Pensamientos'[reference:12]"
+    },
+    {
+      "autor": "Immanuel Kant",
+      "frase": "La felicidad no brota de la razón, sino de la imaginación.",
+      "fuente": "Tradición filosófica[reference:13]"
+    },
+    {
+      "autor": "Arthur Schopenhauer",
+      "frase": "Pocas veces pensamos en lo que tenemos; pero siempre en lo que nos falta.",
+      "fuente": "Tradición filosófica[reference:14]"
+    },
+    {
+      "autor": "Friedrich Nietzsche",
+      "frase": "Quien tiene un porqué para vivir puede soportar casi cualquier cómo.",
+      "fuente": "'Crepúsculo de los ídolos'[reference:15]"
+    },
+    {
+      "autor": "Jean-Paul Sartre",
+      "frase": "El hombre está condenado a ser libre.",
+      "fuente": "'El ser y la nada'[reference:16]"
+    },
+    {
+      "autor": "Simone de Beauvoir",
+      "frase": "No se nace mujer, sino que se llega a serlo.",
+      "fuente": "'El segundo sexo'[reference:17]"
+    },
+    {
+      "autor": "Albert Camus",
+      "frase": "En medio del invierno, aprendí por fin que había en mí un verano invencible.",
+      "fuente": "Tradición literaria"
+    },
+    {
+      "autor": "Bertrand Russell",
+      "frase": "La ciencia es lo que sabes. La filosofía es lo que no sabes.",
+      "fuente": "Tradición filosófica[reference:18][reference:19]"
+    },
+    {
+      "autor": "Buda (Dhammapada)",
+      "frase": "El que se conquista a sí mismo es un vencedor mayor que quien conquista a mil hombres.",
+      "fuente": "'Dhammapada'[reference:20]"
+    },
+    {
+      "autor": "Rumi",
+      "frase": "No eres una gota en el Océano, eres el Océano en una gota.",
+      "fuente": "Tradición poética persa[reference:21]"
+    },
+    {
+      "autor": "Rabindranath Tagore",
+      "frase": "La fe es el pájaro que siente la luz y canta cuando el amanecer aún es oscuro.",
+      "fuente": "'Fireflies'[reference:22]"
+    },
+    {
+      "autor": "William James",
+      "frase": "Cree que tu vida merece la pena ser vivida y esa creencia ayudará a crear el hecho.",
+      "fuente": "Tradición filosófica[reference:23]"
+    },
+    {
+      "autor": "John Locke",
+      "frase": "La lectura proporciona a la mente materiales para el conocimiento, pero solo el pensamiento hace que lo que leemos sea nuestro.",
+      "fuente": "Tradición filosófica[reference:24]"
+    },
+    {
+      "autor": "Voltaire",
+      "frase": "Quienes creen que el dinero lo hace todo terminan haciendo todo por dinero.",
+      "fuente": "Tradición filosófica[reference:25]"
+    },
+    {
+      "autor": "Francis Bacon",
+      "frase": "El conocimiento es poder.",
+      "fuente": "'Meditationes Sacrae'[reference:26][reference:27]"
+    },
+    {
+      "autor": "Tales de Mileto",
+      "frase": "La cosa más difícil es conocernos a nosotros mismos; la más fácil es hablar mal de los demás.",
+      "fuente": "Tradición filosófica[reference:28][reference:29]"
+    },
+    {
+      "autor": "Pitágoras",
+      "frase": "No sabe hablar quien no sabe callar.",
+      "fuente": "Tradición filosófica[reference:30]"
+    },
+    {
+      "autor": "Cicerón",
+      "frase": "No basta con conquistar la sabiduría, es necesario utilizarla.",
+      "fuente": "Tradición filosófica[reference:31]"
+    },
+    {
+      "autor": "Søren Kierkegaard",
+      "frase": "Debo encontrar una verdad que sea verdad para mí.",
+      "fuente": "Tradición filosófica[reference:32]"
+    },
+    {
+      "autor": "Martin Heidegger",
+      "frase": "Quien tiene grandes pensamientos a menudo comete grandes errores.",
+      "fuente": "Tradición filosófica[reference:33]"
+    },
+    {
+      "autor": "Ángela Davis",
+      "frase": "No estoy aceptando las cosas que no puedo cambiar, estoy cambiando las cosas que no puedo aceptar.",
+      "fuente": "Tradición filosófica[reference:34]"
+    },
+    {
+      "autor": "Charles Chaplin",
+      "frase": "Un día sin reír es un día perdido.",
+      "fuente": "Tradición cinematográfica[reference:35]"
+    },
+    {
+      "autor": "Mark Twain",
+      "frase": "Dentro de veinte años estarás más decepcionado por las cosas que no hiciste que por las que hiciste.",
+      "fuente": "Tradición literaria[reference:36][reference:37]"
+    },
+    {
+      "autor": "Winston Churchill",
+      "frase": "El éxito consiste en ir de fracaso a fracaso sin perder el entusiasmo.",
+      "fuente": "Tradición política[reference:38][reference:39]"
+    },
+    {
+      "autor": "Albert Einstein",
+      "frase": "La vida es muy peligrosa. No por las personas que hacen el mal, sino por las que se sientan a ver lo que pasa.",
+      "fuente": "Tradición científica[reference:40]"
+    },
+    {
+      "autor": "Virginia Woolf",
+      "frase": "No se puede encontrar la paz evitando la vida.",
+      "fuente": "Tradición literaria[reference:41]"
+    },
+    {
+      "autor": "Henry David Thoreau",
+      "frase": "La felicidad es como una mariposa: cuanto más intentas atraparla, más se aleja.",
+      "fuente": "Tradición literaria[reference:42]"
+    },
+    {
+      "autor": "Ralph Waldo Emerson",
+      "frase": "La confianza en sí mismo es el primer secreto del éxito.",
+      "fuente": "Tradición literaria[reference:43]"
+    },
+    {
+      "autor": "Henry Ford",
+      "frase": "Tanto si crees que puedes como si crees que no puedes, estás en lo correcto.",
+      "fuente": "Tradición empresarial[reference:44]"
+    },
+    {
+      "autor": "Steve Jobs",
+      "frase": "El único modo de hacer un gran trabajo es amar lo que haces.",
+      "fuente": "Discurso en Stanford[reference:45]"
+    },
+    {
+      "autor": "C.S. Lewis",
+      "frase": "Nunca eres demasiado viejo para establecer un nuevo objetivo o para soñar un nuevo sueño.",
+      "fuente": "Tradición literaria[reference:46]"
+    },
+    {
+      "autor": "Pablo Picasso",
+      "frase": "La inspiración existe, pero tiene que encontrarte trabajando.",
+      "fuente": "Tradición artística[reference:47]"
+    },
+    {
+      "autor": "Nelson Mandela",
+      "frase": "El dinero no es la clave del éxito; la libertad para poder crear lo es.",
+      "fuente": "Tradición política[reference:48]"
+    },
+    {
+      "autor": "Gabriel García Márquez",
+      "frase": "Recordar es fácil para quien tiene memoria. Olvidar es difícil para el que tiene corazón.",
+      "fuente": "Tradición literaria[reference:49]"
+    },
+    {
+      "autor": "Jorge Luis Borges",
+      "frase": "No hables a menos que puedas mejorar el silencio.",
+      "fuente": "Tradición literaria[reference:50]"
+    },
+    {
+      "autor": "Julio Cortázar",
+      "frase": "Nada está perdido si se tiene la valentía de decir que todo está perdido y hay que comenzar de nuevo.",
+      "fuente": "Tradición literaria[reference:51]"
+    },
+    {
+      "autor": "Franz Kafka",
+      "frase": "Un libro debe ser como un hacha para el mar helado que tenemos dentro de nosotros.",
+      "fuente": "Tradición literaria[reference:52][reference:53]"
+    },
+    {
+      "autor": "William Shakespeare",
+      "frase": "Las heridas que no se ven son las más profundas.",
+      "fuente": "Tradición literaria[reference:54]"
+    },
+    {
+      "autor": "Miguel de Cervantes",
+      "frase": "Más vale la pena en la cara que la mancha en el corazón.",
+      "fuente": "Tradición literaria[reference:55][reference:56]"
+    },
+    {
+      "autor": "Johann Wolfgang von Goethe",
+      "frase": "Tener conocimientos no es suficiente, debemos aplicarlos. Desear no es suficiente, debemos actuar.",
+      "fuente": "Tradición literaria[reference:57]"
+    }
+  ]
+}

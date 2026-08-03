@@ -2,17 +2,21 @@
 
 Suite de productividad desktop con diseño Neo-Brutalista. Construida con **Electron + Vite + React + TypeScript + Tailwind CSS + SQLite (sql.js)**.
 
+[![MIT License](https://img.shields.io/badge/license-MIT-black.svg)](LICENSE)
+[![GitHub release](https://img.shields.io/badge/release-v1.0.1-black.svg)](https://github.com/MHAlberto/Tequitl/releases/latest)
+
 ## Mini-Apps
 
 | App | Náhuatl | Descripción |
 |-----|---------|-------------|
-| Hábitos | **Yeyelli** | Matriz semanal de constancia y seguimiento |
-| Pomodoro | **Tlahuilli** | Temporizador de enfoque (25/5/15 min) |
-| Calendario | **Tonalli** | Agenda mensual y eventos |
-| Notas | **Amoxtli** | Bloc de notas Markdown/texto plano |
+| Hábitos | **Yeyelli** | Matriz semanal de constancia y seguimiento con edición inline |
+| Pomodoro | **Tlahuilli** | Temporizador con modos Zen (fullscreen) y Mini (ventana compacta) |
+| Agenda | **Cahuitl** | Planificador diario por horarios (5am-10pm) con rutina semanal recurrente |
+| Calendario | **Tonalli** | Agenda mensual con eventos y navegación entre meses |
+| Notas | **Amoxtli** | Bloc de notas con búsqueda |
 | Kanban | **Tequipanolli** | Tablero de tareas (Por hacer / En progreso / Completado) |
-| Respiro | **Ihiyotl** | Ejercicio guiado de respiración 4-4-4 |
-| Historial | **Mahuizotl** | Registros unificados de actividad |
+| Respiro | **Ihiyotl** | Ejercicio guiado de respiración con tiempos configurables |
+| Peso | **Etili** | Tracker de peso corporal con gráfico y estadísticas |
 | Datos | — | Exportar/Importar base de datos SQLite |
 
 ## Stack
@@ -22,18 +26,19 @@ Suite de productividad desktop con diseño Neo-Brutalista. Construida con **Elec
 - **UI**: React 18 + TypeScript + Tailwind CSS
 - **DB**: SQLite via sql.js (WASM, sin compilación nativa)
 - **Iconos**: Lucide React
-- **Empaquetado**: electron-builder (NSIS para Windows)
+- **Empaquetado**: electron-builder (NSIS para Windows, próximamente Linux AppImage y macOS DMG)
+- **Actualizaciones**: electron-updater con GitHub Releases
 
 ## Requisitos
 
 - **Node.js** >= 18
 - **npm** >= 9
-- Windows 10/11 (para el build de Windows)
 
 ## Instalación
 
 ```bash
-cd tequitl-app
+git clone https://github.com/MHAlberto/Tequitl.git
+cd Tequitl
 npm install
 ```
 
@@ -43,32 +48,23 @@ npm install
 npm run dev
 ```
 
-Esto inicia Vite dev server + Electron en modo desarrollo con hot reload.
+Inicia Vite dev server + Electron en modo desarrollo con hot reload.
 
-## Build para Windows
-
-```bash
-npm run build:win
-```
-
-El instalador se genera en `release/TEQUITL Setup 1.0.0.exe`.
-
-Si `npm run build:win` no está disponible, usar:
+## Build
 
 ```bash
-npx tsc --noEmit
-npx vite build
-npx electron-builder --win --x64
+npm run build:win     # Windows (.exe NSIS)
+npm run build:linux   # Linux (AppImage)
+npm run build:mac     # macOS (DMG)
+npm run build:all     # Todas las plataformas
 ```
 
-## Ejecutar sin instalar
-
-La app descomprimida está en `release/win-unpacked/TEQUITL.exe`.
+Los instaladores se generan en `release/`.
 
 ## Estructura
 
 ```
-tequitl-app/
+tequitl/
 ├── package.json
 ├── vite.config.ts
 ├── tsconfig.json
@@ -76,24 +72,31 @@ tequitl-app/
 ├── postcss.config.js
 ├── index.html
 ├── frases.json
+├── LICENSE
 ├── resources/
-│   └── logo.ico
+│   ├── logo.ico
+│   ├── logo.png
+│   └── sql-wasm.wasm
 ├── electron/
-│   ├── main.ts            # Proceso principal + IPC handlers
+│   ├── main.ts            # Proceso principal + IPC handlers + auto-updater
 │   ├── preload.ts         # contextBridge seguro
 │   └── db/
 │       ├── schema.sql     # Esquema DDL
 │       ├── database.ts    # Operaciones SQLite
 │       └── backup.ts      # Export/Import DB
+├── docs/                  # Landing page (GitHub Pages)
+│   └── index.html
 └── src/
-    ├── main.tsx           # Entry point React
-    ├── App.tsx            # Layout y enrutamiento
-    ├── index.css          # Tailwind + estilos neo-brutalistas
+    ├── main.tsx
+    ├── App.tsx
+    ├── index.css
     ├── types/
-    │   └── global.d.ts    # Tipos de window.electronAPI
+    │   └── global.d.ts
     └── components/
+        ├── Configuracion.tsx
         ├── layout/
-        │   └── Sidebar.tsx
+        │   ├── Sidebar.tsx
+        │   └── TitleBar.tsx
         ├── shared/
         │   ├── QuoteBar.tsx
         │   └── DbSettings.tsx
@@ -104,26 +107,9 @@ tequitl-app/
             ├── AmoxtliNotes.tsx
             ├── TequipanolliKanban.tsx
             ├── IhiyotlBreathing.tsx
-            └── MahuizotlAnalytics.tsx
-```
-
-## Personalización del Icono
-
-El archivo `resources/logo.ico` debe ser al menos **256x256 píxeles** para el instalador NSIS. Si tu ícono no cumple este tamaño, puedes:
-
-1. Convertirlo con herramientas como ImageMagick:
-   ```bash
-   magick convert logo.ico -resize 256x256 logo-256.ico
-   ```
-2. O generar un `.ico` de 256x256 desde un PNG.
-
-Luego actualizar en `package.json`:
-
-```json
-"win": {
-  "target": "nsis",
-  "icon": "resources/logo.ico"
-}
+            ├── MahuizotlAnalytics.tsx
+            ├── EtiliWeightTracker.tsx
+            └── CahuitlSchedule.tsx
 ```
 
 ## Base de Datos
@@ -134,4 +120,8 @@ Luego actualizar en `package.json`:
 
 ## Licencia
 
-Proyecto personal. Uso libre.
+**MIT License** — Totalmente libre y open source.
+
+Podés **usar, modificar, distribuir y vender** este software sin ninguna restricción. No hay versión "pro", funcionalidades bloqueadas ni telemetría. Todo el código está disponible en este repositorio.
+
+Ver [LICENSE](LICENSE) para el texto completo.

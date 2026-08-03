@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TEQUITL - Suite de Productividad</title>
-  <meta name="description" content="TEQUITL es una suite desktop de productividad con diseño neo-brutalista. Incluye tracker de hábitos, pomodoro, calendario, notas, kanban, peso corporal, respiración guiada y agenda por horarios." />
+  <meta name="description" content="TEQUITL es una suite desktop de productividad gratuita y de código abierto con diseño neo-brutalista. Incluye tracker de hábitos, pomodoro, calendario, notas, kanban, peso corporal, respiración guiada y agenda por horarios." />
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
 
@@ -23,16 +23,10 @@
     .hero {
       background: #171717;
       color: white;
-      padding: 80px 20px 60px;
+      padding: 60px 20px 50px;
       text-align: center;
-      border-bottom: 0 solid #171717;
     }
-    .hero h1 {
-      font-size: clamp(2.5rem, 6vw, 5rem);
-      font-weight: 900;
-      letter-spacing: -0.02em;
-      text-transform: uppercase;
-    }
+    .hero-logo { width: 80px; height: 80px; margin-bottom: 16px; }
     .hero .badge {
       display: inline-block;
       font-family: 'JetBrains Mono', monospace;
@@ -45,46 +39,85 @@
       text-transform: uppercase;
       letter-spacing: 0.1em;
     }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
     .hero p {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.85rem;
       color: #a3a3a3;
       margin-top: 12px;
-      max-width: 500px;
+      max-width: 550px;
       margin-left: auto;
       margin-right: auto;
     }
+    .hero .oss-badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.6rem;
+      font-weight: 700;
+      background: transparent;
+      color: #737373;
+      border: 0 solid #525252;
+      padding: 3px 10px;
+      margin-top: 12px;
+      text-transform: uppercase;
+    }
 
-    /* Download button */
+    /* Download */
     .dl-section {
       text-align: center;
       padding: 40px 20px;
       background: #e5e5e5;
-      border-bottom: 0 solid #171717;
     }
-    .dl-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: #171717;
-      color: white;
-      font-family: 'Inter', sans-serif;
-      font-weight: 800;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      text-decoration: none;
-      padding: 18px 40px;
-      border: 0 solid #171717;
-      box-shadow: 6px 6px 0 0 rgba(0,0,0,1);
-      transition: all 0.15s;
-    }
-    .dl-btn:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 0 rgba(0,0,0,1); }
-    .dl-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 rgba(0,0,0,1); }
     .dl-info {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.75rem;
       color: #525252;
-      margin-top: 12px;
+    }
+    .platform-btns {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .platform-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: white;
+      color: #171717;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.75rem;
+      text-decoration: none;
+      padding: 14px 22px;
+      border: 0 solid #171717;
+      box-shadow: 4px 4px 0 0 rgba(0,0,0,1);
+      transition: all 0.15s;
+    }
+    .platform-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 0 rgba(0,0,0,1); }
+    .platform-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 rgba(0,0,0,1); }
+    .platform-btn.coming-soon {
+      opacity: 0.5;
+      cursor: not-allowed;
+      box-shadow: 2px 2px 0 0 rgba(0,0,0,0.3);
+    }
+    .platform-btn.coming-soon:hover { transform: none; box-shadow: 2px 2px 0 0 rgba(0,0,0,0.3); }
+    .platform-btn svg { width: 16px; height: 16px; }
+
+    /* Section titles */
+    .section-title {
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 30px;
+      letter-spacing: -0.02em;
     }
 
     /* Features */
@@ -92,29 +125,21 @@
       padding: 60px 20px;
       background: white;
     }
-    .features h2 {
-      font-size: 1.6rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      text-align: center;
-      margin-bottom: 40px;
-      letter-spacing: -0.02em;
-    }
-    .grid {
+    .mini-grid {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
       gap: 20px;
-      max-width: 900px;
+      max-width: 960px;
       margin: 0 auto;
     }
-    .card {
+    .app-card {
       background: #fafafa;
       border: 0 solid #171717;
       padding: 20px;
       box-shadow: 4px 4px 0 0 rgba(0,0,0,1);
     }
-    .card h3 { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; }
-    .card .nahuatl {
+    .app-card h3 { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; }
+    .app-card .nahuatl {
       font-family: 'JetBrains Mono', monospace;
       font-size: 0.65rem;
       font-weight: 700;
@@ -124,19 +149,13 @@
       display: inline-block;
       margin-bottom: 8px;
     }
-    .card p { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #737373; margin-top: 8px; }
+    .app-card p { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #737373; margin-top: 8px; }
 
     /* Screenshots */
     .screenshots {
       padding: 60px 20px;
       background: #e5e5e5;
       text-align: center;
-    }
-    .screenshots h2 {
-      font-size: 1.6rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 30px;
     }
     .shot-grid {
       display: grid;
@@ -152,17 +171,92 @@
       background: white;
     }
 
+    /* Changelog */
+    .changelog {
+      padding: 60px 20px;
+      background: white;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .changelog-entry {
+      border: 0 solid #171717;
+      padding: 24px;
+      margin-bottom: 16px;
+      box-shadow: 4px 4px 0 0 rgba(0,0,0,1);
+      background: #fafafa;
+    }
+    .changelog-entry h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .changelog-entry .ver {
+      background: #171717;
+      color: white;
+      font-size: 0.7rem;
+      padding: 3px 10px;
+      font-weight: 700;
+    }
+    .changelog-entry ul {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #525252;
+      padding-left: 18px;
+      margin-top: 8px;
+    }
+    .changelog-entry li { margin-bottom: 4px; }
+    .changelog-entry .tag {
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      margin-right: 6px;
+      text-transform: uppercase;
+    }
+    .tag-fix { background: #fef2f2; color: #dc2626; border: 0 solid #dc2626; }
+    .tag-feat { background: #f0fdf4; color: #16a34a; border: 0 solid #16a34a; }
+
+    /* License */
+    .license-section {
+      padding: 60px 20px;
+      background: #e5e5e5;
+      text-align: center;
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .license-box {
+      background: #fafafa;
+      border: 0 solid #171717;
+      padding: 30px;
+      box-shadow: 4px 4px 0 0 rgba(0,0,0,1);
+    }
+    .license-box h3 {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .license-box p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: #525252;
+      line-height: 1.8;
+    }
+    .license-box .free-tag {
+      display: inline-block;
+      background: #171717;
+      color: white;
+      font-weight: 700;
+      font-size: 0.65rem;
+      padding: 3px 10px;
+      margin-bottom: 12px;
+    }
+
     /* Stack */
     .stack {
       padding: 60px 20px;
       background: white;
       text-align: center;
-    }
-    .stack h2 {
-      font-size: 1.6rem;
-      font-weight: 900;
-      text-transform: uppercase;
-      margin-bottom: 20px;
     }
     .stack-tags {
       display: flex;
@@ -181,7 +275,6 @@
       background: #fafafa;
     }
 
-    /* Footer */
     footer {
       text-align: center;
       padding: 30px 20px;
@@ -196,69 +289,50 @@
 <body>
 
 <div class="hero">
-  <span class="badge">Windows · v<span id="version">1.0.1</span></span>
+  <img class="hero-logo" src="logo.png" alt="TEQUITL logo" />
+  <br />
+  <span class="badge">v<span id="version">1.0.1</span> · Windows</span>
   <h1>TEQUITL</h1>
-  <p>Suite de productividad desktop con diseño neo-brutalista. Trabajo, tiempo y seguimiento en una sola app.</p>
+  <p>Suite de productividad desktop con diseño neo-brutalista. Trabajo, tiempo y seguimiento en una sola app. Totalmente gratuita y de código abierto.</p>
+  <span class="oss-badge">FREE · OPEN SOURCE · MIT</span>
 </div>
 
 <div class="dl-section">
-  <a id="dl-btn" class="dl-btn" href="https://github.com/MHAlberto/Tequitl/releases/latest">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-    DESCARGAR PARA WINDOWS
-  </a>
-  <p class="dl-info">Instalador NSIS · 64-bit · Windows 10/11</p>
+  <p class="dl-info" style="margin-bottom:12px;text-transform:uppercase;letter-spacing:0.1em;font-weight:700">Descargar última versión</p>
+  <div class="platform-btns">
+    <a id="dl-win" class="platform-btn" href="https://github.com/MHAlberto/Tequitl/releases/latest">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+      Windows .exe
+    </a>
+    <span class="platform-btn coming-soon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="8" r="4"/><circle cx="8" cy="16" r="1.5"/><circle cx="16" cy="16" r="1.5"/></svg>
+      Linux · Próximamente
+    </span>
+    <span class="platform-btn coming-soon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6v6l4 2"/></svg>
+      macOS · Próximamente
+    </span>
+  </div>
 </div>
 
 <div class="features">
-  <h2>Mini-Apps Incluidas</h2>
-  <div class="grid">
-    <div class="card">
-      <span class="nahuatl">YEYELLI</span>
-      <h3>Hábitos</h3>
-      <p>Matriz semanal de seguimiento de hábitos con checkboxes diarios.</p>
-    </div>
-    <div class="card">
-      <span class="nahuatl">TLAHUILTI</span>
-      <h3>Pomodoro</h3>
-      <p>Timer de enfoque con modos Zen y Mini, persistente entre vistas.</p>
-    </div>
-    <div class="card">
-      <span class="nahuatl">CAHUITL</span>
-      <h3>Agenda</h3>
-      <p>Planificador diario por horarios con rutina semanal recurrente.</p>
-    </div>
-    <div class="card">
-      <span class="nahuatl">TONALLI</span>
-      <h3>Calendario</h3>
-      <p>Agenda mensual con eventos y navegación entre meses.</p>
-    </div>
-    <div class="card">
-      <span class="nahuatl">AMOXTLI</span>
-      <h3>Notas</h3>
-      <p>Bloc de notas con búsqueda y organización por tags.</p>
-    </div>
-    <div class="card">
-      <span class="nahuatl">TEQUIPANOLLI</span>
-      <h3>Kanban</h3>
-      <p>Tablero de tareas en 3 columnas: Por hacer, En progreso, Terminado.</p>
-    </div>
-    <div class="card">
-      <span class="nahuatl">IHIYOTL</span>
-      <h3>Respiro</h3>
-      <p>Ejercicio de respiración guiada con tiempos configurables.</p>
-    </div>
-    <div class="card">
-      <span class="nahuatl">ETILI</span>
-      <h3>Peso</h3>
-      <p>Tracker de peso corporal con gráfico de evolución y estadísticas.</p>
-    </div>
+  <h2 class="section-title">Mini-Apps Incluidas</h2>
+  <div class="mini-grid">
+    <div class="app-card"><span class="nahuatl">YEYELLI</span><h3>Hábitos</h3><p>Matriz semanal de seguimiento con checkboxes diarios y edición inline.</p></div>
+    <div class="app-card"><span class="nahuatl">TLAHUILTI</span><h3>Pomodoro</h3><p>Timer de enfoque con modos Zen y Mini. Persiste entre vistas.</p></div>
+    <div class="app-card"><span class="nahuatl">CAHUITL</span><h3>Agenda</h3><p>Planificador diario por horarios con rutina semanal recurrente.</p></div>
+    <div class="app-card"><span class="nahuatl">TONALLI</span><h3>Calendario</h3><p>Agenda mensual con eventos y navegación entre meses.</p></div>
+    <div class="app-card"><span class="nahuatl">AMOXTLI</span><h3>Notas</h3><p>Bloc de notas con búsqueda y organización.</p></div>
+    <div class="app-card"><span class="nahuatl">TEQUIPANOLLI</span><h3>Kanban</h3><p>Tablero de tareas en 3 columnas: Por hacer, En progreso, Terminado.</p></div>
+    <div class="app-card"><span class="nahuatl">IHIYOTL</span><h3>Respiro</h3><p>Ejercicio de respiración guiada con tiempos configurables.</p></div>
+    <div class="app-card"><span class="nahuatl">ETILI</span><h3>Peso</h3><p>Tracker de peso corporal con gráfico sparkline y estadísticas.</p></div>
   </div>
 </div>
 
 <div class="screenshots">
-  <h2>Capturas</h2>
+  <h2 class="section-title">Capturas</h2>
   <div class="shot-grid">
-    <img src="Inicio.PNG" alt="Dashboard inicio TEQUITL" loading="lazy" />
+    <img src="Inicio.PNG" alt="Dashboard TEQUITL" loading="lazy" />
     <img src="Pomodoro.PNG" alt="Pomodoro TEQUITL" loading="lazy" />
     <img src="Pomodoro-zen.PNG" alt="Modo Zen TEQUITL" loading="lazy" />
     <img src="Pomodoro-Mini.PNG" alt="Modo Mini TEQUITL" loading="lazy" />
@@ -266,11 +340,53 @@
   </div>
 </div>
 
+<div class="changelog">
+  <h2 class="section-title" style="text-align:left;">Historial de Versiones</h2>
+  <div class="changelog-entry">
+    <h3><span class="ver">v1.0.1</span></h3>
+    <ul>
+      <li><span class="tag tag-fix">fix</span> Calendario: corregido bug que mostraba el día de la semana incorrecto (offset Monday-first vs Sunday-first)</li>
+      <li><span class="tag tag-feat">feat</span> Auto-updater: integrado electron-updater con notificaciones y descarga automática desde GitHub Releases</li>
+      <li><span class="tag tag-feat">feat</span> Página web de descarga con GitHub Pages</li>
+      <li><span class="tag tag-fix">fix</span> Hábitos: botones de EDITAR/ELIMINAR siempre visibles en los trackers</li>
+      <li><span class="tag tag-fix">fix</span> Corrección de navegación de semanas en trackers de hábitos</li>
+      <li><span class="tag tag-fix">fix</span> Build corregido: eliminado type:module que rompía el main process en producción</li>
+      <li><span class="tag tag-fix">fix</span> Icono redimensionado a 256x256 para electron-builder</li>
+    </ul>
+  </div>
+  <div class="changelog-entry">
+    <h3><span class="ver">v1.0.0</span></h3>
+    <ul>
+      <li><span class="tag tag-feat">feat</span> Lanzamiento inicial con 8 mini-apps integradas</li>
+      <li><span class="tag tag-feat">feat</span> Ventana sin bordes con titlebar neo-brutalista personalizada</li>
+      <li><span class="tag tag-feat">feat</span> Sidebar colapsable con atajo Ctrl+B</li>
+      <li><span class="tag tag-feat">feat</span> Modo Zen y Mini en Pomodoro</li>
+      <li><span class="tag tag-feat">feat</span> Rutina semanal recurrente en Agenda</li>
+      <li><span class="tag tag-feat">feat</span> Panel de configuración con tiempos personalizables</li>
+      <li><span class="tag tag-feat">feat</span> Exportar/Importar base de datos SQLite</li>
+      <li><span class="tag tag-feat">feat</span> Frases filosóficas aleatorias en el dashboard</li>
+    </ul>
+  </div>
+</div>
+
+<div class="license-section">
+  <div class="license-box">
+    <span class="free-tag">MIT LICENSE</span>
+    <h3>Totalmente Gratis y Open Source</h3>
+    <p>
+      TEQUITL es software libre. Podés <strong>usarlo, modificarlo, distribuir copias e incluso venderlo</strong>, sin ninguna restricción.<br /><br />
+      El código fuente está disponible en GitHub bajo la licencia MIT, una de las licencias open source más permisivas que existen.<br /><br />
+      No hay versión "pro". No hay funcionalidades bloqueadas. No hay telemetría.<br />
+      Todo el código es tuyo.
+    </p>
+  </div>
+</div>
+
 <div class="stack">
-  <h2>Tecnologías</h2>
+  <h2 class="section-title">Stack Tecnológico</h2>
   <div class="stack-tags">
-    <span class="stack-tag">Electron</span>
-    <span class="stack-tag">Vite</span>
+    <span class="stack-tag">Electron 33</span>
+    <span class="stack-tag">Vite 6</span>
     <span class="stack-tag">React 18</span>
     <span class="stack-tag">TypeScript</span>
     <span class="stack-tag">Tailwind CSS</span>
@@ -281,21 +397,17 @@
 </div>
 
 <footer>
-  <p><a href="https://github.com/MHAlberto/Tequitl">github.com/MHAlberto/Tequitl</a></p>
+  <p><a href="https://github.com/MHAlberto/Tequitl">github.com/MHAlberto/Tequitl</a> — MIT License</p>
 </footer>
 
 <script>
-  // Auto-fetch latest release version from GitHub
   fetch('https://api.github.com/repos/MHAlberto/Tequitl/releases/latest')
     .then(r => r.json())
     .then(data => {
       if (data.tag_name) {
         document.getElementById('version').textContent = data.tag_name.replace('v','');
-        // Find .exe asset and update download link
-        const exe = data.assets.find(a => a.name.endsWith('.exe'));
-        if (exe) {
-          document.getElementById('dl-btn').href = exe.browser_download_url;
-        }
+        const exe = (data.assets||[]).find(a => a.name.endsWith('.exe'));
+        if (exe) document.getElementById('dl-win').href = exe.browser_download_url;
       }
     })
     .catch(() => {});

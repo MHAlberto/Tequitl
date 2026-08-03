@@ -7,6 +7,9 @@
     "dev": "vite",
     "build": "tsc && vite build && electron-builder",
     "build:win": "tsc && vite build && electron-builder --win",
+    "build:linux": "tsc && vite build && electron-builder --linux",
+    "build:mac": "tsc && vite build && electron-builder --mac",
+    "build:all": "tsc && vite build && electron-builder --win --linux --mac",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
@@ -49,6 +52,16 @@
     "win": {
       "target": "nsis",
       "icon": "resources/logo.ico"
+    },
+    "linux": {
+      "target": ["AppImage", "tar.gz"],
+      "category": "Office",
+      "synopsis": "Suite de Productividad Neo-Brutalista"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "resources/logo.png",
+      "category": "public.app-category.productivity"
     },
     "nsis": {
       "oneClick": false,

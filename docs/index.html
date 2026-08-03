@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TEQUITL - Suite de Productividad</title>
+  <meta name="description" content="TEQUITL es una suite desktop de productividad con diseño neo-brutalista. Incluye tracker de hábitos, pomodoro, calendario, notas, kanban, peso corporal, respiración guiada y agenda por horarios." />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;500;700;800&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f5f5f5;
+      color: #171717;
+      line-height: 1.6;
+    }
+
+    .container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+    /* Hero */
+    .hero {
+      background: #171717;
+      color: white;
+      padding: 80px 20px 60px;
+      text-align: center;
+      border-bottom: 0 solid #171717;
+    }
+    .hero h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      text-transform: uppercase;
+    }
+    .hero .badge {
+      display: inline-block;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      background: white;
+      color: #171717;
+      padding: 4px 10px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    .hero p {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+      color: #a3a3a3;
+      margin-top: 12px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* Download button */
+    .dl-section {
+      text-align: center;
+      padding: 40px 20px;
+      background: #e5e5e5;
+      border-bottom: 0 solid #171717;
+    }
+    .dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #171717;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      text-decoration: none;
+      padding: 18px 40px;
+      border: 0 solid #171717;
+      box-shadow: 6px 6px 0 0 rgba(0,0,0,1);
+      transition: all 0.15s;
+    }
+    .dl-btn:hover { transform: translate(-2px, -2px); box-shadow: 8px 8px 0 0 rgba(0,0,0,1); }
+    .dl-btn:active { transform: translate(2px, 2px); box-shadow: 2px 2px 0 0 rgba(0,0,0,1); }
+    .dl-info {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.75rem;
+      color: #525252;
+      margin-top: 12px;
+    }
+
+    /* Features */
+    .features {
+      padding: 60px 20px;
+      background: white;
+    }
+    .features h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      text-align: center;
+      margin-bottom: 40px;
+      letter-spacing: -0.02em;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 20px;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    .card {
+      background: #fafafa;
+      border: 0 solid #171717;
+      padding: 20px;
+      box-shadow: 4px 4px 0 0 rgba(0,0,0,1);
+    }
+    .card h3 { font-size: 0.85rem; font-weight: 800; text-transform: uppercase; }
+    .card .nahuatl {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.65rem;
+      font-weight: 700;
+      background: #171717;
+      color: white;
+      padding: 2px 8px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .card p { font-family: 'JetBrains Mono', monospace; font-size: 0.7rem; color: #737373; margin-top: 8px; }
+
+    /* Screenshots */
+    .screenshots {
+      padding: 60px 20px;
+      background: #e5e5e5;
+      text-align: center;
+    }
+    .screenshots h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+    .shot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      max-width: 960px;
+      margin: 0 auto;
+    }
+    .shot-grid img {
+      width: 100%;
+      border: 0 solid #171717;
+      box-shadow: 4px 4px 0 0 rgba(0,0,0,1);
+      background: white;
+    }
+
+    /* Stack */
+    .stack {
+      padding: 60px 20px;
+      background: white;
+      text-align: center;
+    }
+    .stack h2 {
+      font-size: 1.6rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .stack-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .stack-tag {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+      font-weight: 700;
+      border: 0 solid #171717;
+      padding: 6px 12px;
+      background: #fafafa;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 30px 20px;
+      background: #171717;
+      color: #737373;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem;
+    }
+    footer a { color: white; text-decoration: underline; }
+  </style>
+</head>
+<body>
+
+<div class="hero">
+  <span class="badge">Windows · v<span id="version">1.0.1</span></span>
+  <h1>TEQUITL</h1>
+  <p>Suite de productividad desktop con diseño neo-brutalista. Trabajo, tiempo y seguimiento en una sola app.</p>
+</div>
+
+<div class="dl-section">
+  <a id="dl-btn" class="dl-btn" href="https://github.com/MHAlberto/Tequitl/releases/latest">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+    DESCARGAR PARA WINDOWS
+  </a>
+  <p class="dl-info">Instalador NSIS · 64-bit · Windows 10/11</p>
+</div>
+
+<div class="features">
+  <h2>Mini-Apps Incluidas</h2>
+  <div class="grid">
+    <div class="card">
+      <span class="nahuatl">YEYELLI</span>
+      <h3>Hábitos</h3>
+      <p>Matriz semanal de seguimiento de hábitos con checkboxes diarios.</p>
+    </div>
+    <div class="card">
+      <span class="nahuatl">TLAHUILTI</span>
+      <h3>Pomodoro</h3>
+      <p>Timer de enfoque con modos Zen y Mini, persistente entre vistas.</p>
+    </div>
+    <div class="card">
+      <span class="nahuatl">CAHUITL</span>
+      <h3>Agenda</h3>
+      <p>Planificador diario por horarios con rutina semanal recurrente.</p>
+    </div>
+    <div class="card">
+      <span class="nahuatl">TONALLI</span>
+      <h3>Calendario</h3>
+      <p>Agenda mensual con eventos y navegación entre meses.</p>
+    </div>
+    <div class="card">
+      <span class="nahuatl">AMOXTLI</span>
+      <h3>Notas</h3>
+      <p>Bloc de notas con búsqueda y organización por tags.</p>
+    </div>
+    <div class="card">
+      <span class="nahuatl">TEQUIPANOLLI</span>
+      <h3>Kanban</h3>
+      <p>Tablero de tareas en 3 columnas: Por hacer, En progreso, Terminado.</p>
+    </div>
+    <div class="card">
+      <span class="nahuatl">IHIYOTL</span>
+      <h3>Respiro</h3>
+      <p>Ejercicio de respiración guiada con tiempos configurables.</p>
+    </div>
+    <div class="card">
+      <span class="nahuatl">ETILI</span>
+      <h3>Peso</h3>
+      <p>Tracker de peso corporal con gráfico de evolución y estadísticas.</p>
+    </div>
+  </div>
+</div>
+
+<div class="screenshots">
+  <h2>Capturas</h2>
+  <div class="shot-grid">
+    <img src="Inicio.PNG" alt="Dashboard inicio TEQUITL" loading="lazy" />
+    <img src="Pomodoro.PNG" alt="Pomodoro TEQUITL" loading="lazy" />
+    <img src="Pomodoro-zen.PNG" alt="Modo Zen TEQUITL" loading="lazy" />
+    <img src="Pomodoro-Mini.PNG" alt="Modo Mini TEQUITL" loading="lazy" />
+    <img src="Tracker.PNG" alt="Tracker de hábitos TEQUITL" loading="lazy" />
+  </div>
+</div>
+
+<div class="stack">
+  <h2>Tecnologías</h2>
+  <div class="stack-tags">
+    <span class="stack-tag">Electron</span>
+    <span class="stack-tag">Vite</span>
+    <span class="stack-tag">React 18</span>
+    <span class="stack-tag">TypeScript</span>
+    <span class="stack-tag">Tailwind CSS</span>
+    <span class="stack-tag">SQLite (sql.js)</span>
+    <span class="stack-tag">electron-builder</span>
+    <span class="stack-tag">electron-updater</span>
+  </div>
+</div>
+
+<footer>
+  <p><a href="https://github.com/MHAlberto/Tequitl">github.com/MHAlberto/Tequitl</a></p>
+</footer>
+
+<script>
+  // Auto-fetch latest release version from GitHub
+  fetch('https://api.github.com/repos/MHAlberto/Tequitl/releases/latest')
+    .then(r => r.json())
+    .then(data => {
+      if (data.tag_name) {
+        document.getElementById('version').textContent = data.tag_name.replace('v','');
+        // Find .exe asset and update download link
+        const exe = data.assets.find(a => a.name.endsWith('.exe'));
+        if (exe) {
+          document.getElementById('dl-btn').href = exe.browser_download_url;
+        }
+      }
+    })
+    .catch(() => {});
+</script>
+
+</body>
+</html>
